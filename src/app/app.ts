@@ -5,9 +5,10 @@ import { RouterOutlet } from '@angular/router';
 import { Dashboard } from "./dashboard/dashboard";
 import { Navigation } from "./navigation/navigation";
 import { Header } from "./header/header";
+import { TuiNavigationHeader } from "./shared/components/tui-navigation-header/tui-navigation-header";
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TuiRoot, TuiNavigation, Navigation, Header],
+  imports: [RouterOutlet, TuiRoot, TuiNavigation, Navigation, Header, TuiNavigationHeader],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

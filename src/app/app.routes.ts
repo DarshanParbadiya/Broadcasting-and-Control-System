@@ -8,5 +8,6 @@ export const routes: Routes = [
 {path : "", component:Home},
 { path: 'home', loadComponent: () => import('./home/home').then(m => m.Home) ,},
 { path: 'templates', loadComponent: () => import('./internal-templates/internal-templates').then(m => m.InternalTemplates) },
+{ path: 'reports', loadComponent: () => import('./shared/components/reports-form/reports-form').then(m => m.ReportsForm) }
 
 ];

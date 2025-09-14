@@ -1,0 +1,60 @@
+<form tuiForm="l" [formGroup]="testForm" [style.max-width.rem]="35">
+    <header tuiHeader>
+        <h3 tuiTitle>
+            Reports
+            <span tuiSubtitle>You can generate repots by providing the details!</span>
+        </h3>
+    </header>
+
+    <fieldset>
+        <div class="stack">
+            <tui-textfield>
+                <label tuiLabel>Plan Name</label>
+                <input formControlName="planName" placeholder="Field placeholder" tuiTextfield />
+                <tui-icon tuiTooltip="Enter a plan name" />
+            </tui-textfield>
+            <tui-error formControlName="planName" [error]="[] | tuiFieldError | async" />
+        </div>
+        <div class="stack">
+            <tui-textfield tuiChevron [tuiTextfieldCleaner]="false">
+                <label tuiLabel>Plan Status</label>
+
+                <input formControlName="planStatus" tuiSelect />
+                <tui-icon tuiTooltip="Select a plan status" />
+                <tui-data-list-wrapper *tuiTextfieldDropdown new [items]="planStatuses" />
+            </tui-textfield>
+            <tui-error formControlName="planStatus" [error]="[] | tuiFieldError | async" />
+        </div>
+    </fieldset>
+
+
+    <tui-textfield>
+        <label tuiLabel>Plan Start Date</label>
+        <input tuiInputDate formControlName="startDate" />
+        <tui-calendar *tuiTextfieldDropdown />
+    </tui-textfield>
+    <tui-error formControlName="startDate" [error]="[] | tuiFieldError | async" />
+
+    <tui-textfield>
+        <label tuiLabel>Plan End Date</label>
+        <input tuiInputDate formControlName="endDate" />
+        <tui-calendar *tuiTextfieldDropdown />
+    </tui-textfield>
+    <tui-error formControlName="endDate" [error]="[] | tuiFieldError | async" />
+
+    <footer>
+        <button tuiButton type="submit" [disabled]="testForm.invalid">
+            Submit
+        </button>
+        <button appearance="flat" tuiButton type="button">
+            Cancel
+        </button>
+    </footer>
+</form>
+ 
+<div class="mt-10">
+
+    <app-tui-table></app-tui-table>
+    
+</div>
+
