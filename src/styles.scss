@@ -3,3 +3,9 @@
 // @import '@taiga-ui/core/styles/taiga-ui-fonts.less';
 // @import '@taiga-ui/styles/taiga-ui-global.less';
 @use "tailwindcss";
+
+
+//provide default size of the fonts in rem
+html {
+    font-size: 17px;
+}

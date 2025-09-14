@@ -1,0 +1,184 @@
+<h1 class="text-3xl md:text-4xl font-bold">Internal Template Settings</h1>
+<div class="border-b-2 my-6 border-gray-300"></div>
+<p class="text-xl font-semibold">Configure notification template</p>
+
+<div class="text-md">Logos, signatures, and other elements can be customized here.</div>
+<div class="max-w-lg mt-6 rounded-none" tuiAppearance="secondary-grayscale" tuiButtonGroup>
+    <button type="button">
+        <tui-icon icon="@tui.circle-plus" />
+        Create a Logo
+    </button>
+
+    <button type="button">
+        <tui-icon badge="" icon="@tui.signature" />
+        Add Signature
+    </button>
+
+    <button type="button">
+        <tui-icon badge="@tui.lock" icon="@tui.image-up" class="custom" />
+        Image
+    </button>
+</div>
+
+<div class="">
+    <!-- logos section start -->
+    <div class="box">
+        
+            <tui-scrollbar class="max-h-7">
+                <!-- old logos -->
+                <div class="content flex flex-wrap">
+
+                    <div class="p-4">
+                        <div class="bg-gray-200 h-[100px] w-[100px]">
+                        </div>
+                        <div>
+                            Logo Name
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-gray-200 h-[100px] w-[100px]">
+                        </div>
+                        <div>
+                            Logo Name
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-gray-200 h-[100px] w-[100px]">
+                        </div>
+                        <div>
+                            Logo Name
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-gray-200 h-[100px] w-[100px]">
+                        </div>
+                        <div>
+                            Logo Name
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-gray-200 h-[100px] w-[100px]">
+                        </div>
+                        <div>
+                            Logo Name
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-gray-200 h-[100px] w-[100px]">
+                        </div>
+                        <div>
+                            Logo Name
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-gray-200 h-[100px] w-[100px]">
+                        </div>
+                        <div>
+                            Logo Name
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-gray-200 h-[100px] w-[100px]">
+                        </div>
+                        <div>
+                            Logo Name
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-gray-200 h-[100px] w-[100px]">
+                        </div>
+                        <div>
+                            Logo Name
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="bg-gray-200 h-[100px] w-[100px]">
+                        </div>
+                        <div>
+                            Logo Name
+                        </div>
+                    </div>
+                </div>
+            </tui-scrollbar>
+         
+        <button size="m" tuiButton type="button" class="mt-4">
+            Add
+        </button>
+    </div>
+</div>
+
+<div class="mt-26"></div>
+
+<p class="text-xl font-semibold">Dynamic Fields</p>
+<div class="border-b-2 my-6 border-gray-300"></div>
+<tui-scrollbar>
+    <cdk-virtual-scroll-viewport
+        #viewport
+        appendOnly
+        tuiScrollable
+        class="viewport tui-zero-scrollbar"
+        [itemSize]="45"
+        [maxBufferPx]="500"
+        [minBufferPx]="400"
+    >
+        <table
+            tuiTable
+            [columns]="columns"
+        >
+            <thead>
+                <tr tuiThGroup>
+                    <th
+                        *tuiHead="'name'"
+                        tuiTh
+                        [sticky]="true"
+                        [style.top.px]="-(viewport.getOffsetToRenderedContentStart() || 0)"
+                    >
+                        Category
+                    </th>
+                    <th
+                        *tuiHead="'dob'"
+                        tuiTh
+                        [sticky]="true"
+                        [style.top.px]="-(viewport.getOffsetToRenderedContentStart() || 0)"
+                    >
+                        Sub Category
+                    </th>
+                    <th
+                        *tuiHead="'age'"
+                        tuiTh
+                        [sorter]="ageSorter"
+                        [sticky]="true"
+                        [style.top.px]="-(viewport.getOffsetToRenderedContentStart() || 0)"
+                    >
+                        Variable Name
+                    </th>
+                </tr>
+            </thead>
+            <tbody tuiTbody>
+                <tr
+                    *cdkVirtualFor="let item of data | tuiTableSort"
+                    tuiTr
+                >
+                    <td
+                        *tuiCell="'name'"
+                        tuiTd
+                    >
+                        {{ item.name }}
+                    </td>
+                    <td
+                        *tuiCell="'dob'"
+                        tuiTd
+                    >
+                        {{ item.dob }}
+                    </td>
+                    <td
+                        *tuiCell="'age'"
+                        tuiTd
+                    >
+                        {{ getAge(item) }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </cdk-virtual-scroll-viewport>
+</tui-scrollbar>

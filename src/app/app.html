@@ -8,6 +8,13 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet />
+<app-header></app-header>
+<div class="flex flex-row">
+    <app-navigation></app-navigation>
+    <div class="px-10 py-5 w-[70vw] mx-auto">
+        <router-outlet />
+     
+    </div>
+</div>
 
 </tui-root>
