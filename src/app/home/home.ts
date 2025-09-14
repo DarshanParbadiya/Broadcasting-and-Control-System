@@ -6,10 +6,12 @@ import {TuiButton, TuiLoader} from '@taiga-ui/core';
 import {TuiAvatar, TuiNotificationMiddle} from '@taiga-ui/kit';
 import {filter, map, startWith, switchMap, take, tap, timer} from 'rxjs';
 import { Header } from '../header/header';
+import { Navigation } from "../navigation/navigation";
+import Table from '../table/table';
 
 @Component({
   selector: 'app-home',
-  imports: [TuiButton,NgIf, TuiAnimated, TuiAvatar, TuiButton, TuiLoader, TuiNotificationMiddle,Header],
+  imports: [TuiButton, NgIf, TuiAnimated, TuiAvatar, TuiButton, TuiLoader, TuiNotificationMiddle, Header, Navigation,Table],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

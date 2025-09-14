@@ -1,25 +1,30 @@
-<header tuiNavigationHeader>
+<header class="w-full bg-black text-white">
 
-    <!-- Logo -->
-
-
-    <!-- Right Side -->
-    <div class="flex">
+    <div class="flex flex-row justify-around items-center p-4">
+        <!-- Logo -->
         <div>
-            First name
+            <header tuiHeader="h5">
+                <h2 class="text-lg font-bold text-nowrap">Broadcasting and Control System</h2>
+            </header>
         </div>
-        <div>
-            Last Name
+
+        <div class="flex flex-row gap-5 justify-end w-full items-center">
+            <!-- Right Side -->
+            <div class="flex flex-col">
+                <div class="text-xs">
+                    First name, Last name
+                </div>
+                <div class="font-bold text-md">
+                    Office Name
+                </div>
+            </div>
+            <!-- <button [style.color]="'white'" appearance="secondary-grayscale" iconStart="@tui.users" tuiButton tuiButtonVertical type="button"
+                [size]="'xs'">
+                Users
+            </button> -->
+            <div>
+                <tui-icon icon="@tui.users-round" [style.color]="'white'" />
+            </div>
         </div>
     </div>
-    <button
-    appearance="secondary"
-    iconStart="@tui.users"
-    tuiButton
-    tuiButtonVertical
-    type="button"
-    [size]="'xs'"
-    >
-    Users
-</button>
 </header>
